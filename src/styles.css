@@ -1,8 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&family=Cairo:wght@400;600;700;800&display=swap');
 @import "tailwindcss" source(none);
 @source "../src";
 @import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-display: "Bebas Neue", sans-serif;
+  --font-body: "Inter", sans-serif;
+  --font-arabic: "Cairo", sans-serif;
+  --color-gold: var(--gold);
+  --color-gold-glow: var(--gold-glow);
+}
 
 /*
  * Design system definition.
@@ -63,25 +72,27 @@
 
 :root {
   --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.129 0.042 264.695);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.129 0.042 264.695);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.129 0.042 264.695);
-  --primary: oklch(0.208 0.042 265.755);
-  --primary-foreground: oklch(0.984 0.003 247.858);
-  --secondary: oklch(0.968 0.007 247.896);
-  --secondary-foreground: oklch(0.208 0.042 265.755);
-  --muted: oklch(0.968 0.007 247.896);
-  --muted-foreground: oklch(0.554 0.046 257.417);
-  --accent: oklch(0.968 0.007 247.896);
-  --accent-foreground: oklch(0.208 0.042 265.755);
+  --background: oklch(0.05 0 0);
+  --foreground: oklch(0.98 0.005 90);
+  --card: oklch(0.09 0.005 60);
+  --card-foreground: oklch(0.98 0.005 90);
+  --popover: oklch(0.09 0.005 60);
+  --popover-foreground: oklch(0.98 0.005 90);
+  --primary: oklch(0.78 0.16 75);
+  --primary-foreground: oklch(0.1 0.01 60);
+  --secondary: oklch(0.18 0.01 60);
+  --secondary-foreground: oklch(0.98 0.005 90);
+  --muted: oklch(0.15 0.005 60);
+  --muted-foreground: oklch(0.65 0.02 80);
+  --accent: oklch(0.78 0.16 75);
+  --accent-foreground: oklch(0.1 0.01 60);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.984 0.003 247.858);
-  --border: oklch(0.929 0.013 255.508);
-  --input: oklch(0.929 0.013 255.508);
-  --ring: oklch(0.704 0.04 256.788);
+  --border: oklch(0.2 0.01 60);
+  --input: oklch(0.18 0.01 60);
+  --ring: oklch(0.78 0.16 75);
+  --gold: oklch(0.78 0.16 75);
+  --gold-glow: oklch(0.85 0.18 80);
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
@@ -140,5 +151,16 @@
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
+    font-family: var(--font-body);
+  }
+
+  html[dir="rtl"] body {
+    font-family: var(--font-arabic);
+  }
+
+  html[dir="rtl"] .font-display {
+    font-family: var(--font-arabic);
+    font-weight: 800;
+    letter-spacing: 0;
   }
 }
